@@ -97,7 +97,7 @@ namespace RestaurantOrderSystem
     {
         static void Main(string[] args)
         {
-            // 1. INDIVIDUAL ITEM & PRICE VARIABLES (NO ARRAYS)
+            // 1. INDIVIDUAL ITEM & PRICE VARIABLES
             string item1 = "Burger"; double price1 = 8.50;
             string item2 = "Pizza"; double price2 = 10.00;
             string item3 = "Pasta"; double price3 = 9.25;

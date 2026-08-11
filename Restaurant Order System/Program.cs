@@ -97,29 +97,29 @@ namespace RestaurantOrderSystem
     {
         static void Main(string[] args)
         {
-            // 1. MENU SETUP
-            string[] items = { "Burger", "Pizza", "Pasta", "Fries", "Soda" };
-            double[] prices = { 8.50, 10.00, 9.25, 3.50, 2.00 };
+            // 1. INDIVIDUAL ITEM & PRICE VARIABLES (NO ARRAYS)
+            string item1 = "Burger"; double price1 = 8.50;
+            string item2 = "Pizza"; double price2 = 10.00;
+            string item3 = "Pasta"; double price3 = 9.25;
+            string item4 = "Fries"; double price4 = 3.50;
+            string item5 = "Soda"; double price5 = 2.00;
 
             double totalCost = 0.0;
 
-            // 2. DISPLAY MENU ONCE
+            // 2. DISPLAY MENU
             Console.WriteLine("=================================");
             Console.WriteLine("    WELCOME TO THE IJFOODS       ");
             Console.WriteLine("=================================");
-            Console.WriteLine($"1. {items[0]} - ${prices[0]:F2}");
-            Console.WriteLine($"2. {items[1]} - ${prices[1]:F2}");
-            Console.WriteLine($"3. {items[2]} - ${prices[2]:F2}");
-            Console.WriteLine($"4. {items[3]} - ${prices[3]:F2}");
-            Console.WriteLine($"5. {items[4]} - ${prices[4]:F2}");
+            Console.WriteLine($"1. {item1} - ${price1:F2}");
+            Console.WriteLine($"2. {item2} - ${price2:F2}");
+            Console.WriteLine($"3. {item3} - ${price3:F2}");
+            Console.WriteLine($"4. {item4} - ${price4:F2}");
+            Console.WriteLine($"5. {item5} - ${price5:F2}");
             Console.WriteLine("=================================\n");
 
-            // 3. THE LOOP VARIABLE
-            // We set 'ordering' to true to start taking orders.
+            // 3. ORDERING LOOP
             bool isOrdering = true;
 
-            // 4. SIMPLE WHILE LOOP
-            // As long as 'isOrdering' is true, this block keeps repeating.
             while (isOrdering)
             {
                 Console.Write("Enter item number (1-5) to add to order, or 0 to finish: ");
@@ -127,32 +127,31 @@ namespace RestaurantOrderSystem
 
                 if (choice == 1)
                 {
-                    totalCost += prices[0];
-                    Console.WriteLine($"Added {items[0]} - Current Total: ${totalCost:F2}\n");
+                    totalCost += price1;
+                    Console.WriteLine($"Added {item1} - Current Total: ${totalCost:F2}\n");
                 }
                 else if (choice == 2)
                 {
-                    totalCost += prices[1];
-                    Console.WriteLine($"Added {items[1]} - Current Total: ${totalCost:F2}\n");
+                    totalCost += price2;
+                    Console.WriteLine($"Added {item2} - Current Total: ${totalCost:F2}\n");
                 }
                 else if (choice == 3)
                 {
-                    totalCost += prices[2];
-                    Console.WriteLine($"Added {items[2]} - Current Total: ${totalCost:F2}\n");
+                    totalCost += price3;
+                    Console.WriteLine($"Added {item3} - Current Total: ${totalCost:F2}\n");
                 }
                 else if (choice == 4)
                 {
-                    totalCost += prices[3];
-                    Console.WriteLine($"Added {items[3]} - Current Total: ${totalCost:F2}\n");
+                    totalCost += price4;
+                    Console.WriteLine($"Added {item4} - Current Total: ${totalCost:F2}\n");
                 }
                 else if (choice == 5)
                 {
-                    totalCost += prices[4];
-                    Console.WriteLine($"Added {items[4]} - Current Total: ${totalCost:F2}\n");
+                    totalCost += price5;
+                    Console.WriteLine($"Added {item5} - Current Total: ${totalCost:F2}\n");
                 }
                 else if (choice == 0)
                 {
-                    // Typing 0 changes the flag to false, which breaks out of the loop!
                     isOrdering = false;
                     Console.WriteLine("Order complete! Processing receipt...\n");
                 }
@@ -162,7 +161,7 @@ namespace RestaurantOrderSystem
                 }
             }
 
-            // 5. RECEIPT COMPUTATION
+            // 4. RECEIPT COMPUTATION
             double tax = totalCost * 0.075;
             double finalTotal = totalCost + tax;
 
